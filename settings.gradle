@@ -1,0 +1,3 @@
+include ':core'
+include ':android_app'
+rootProject.name = "mobile-wallet-cn"
