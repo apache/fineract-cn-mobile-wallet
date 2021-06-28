@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
 }
 
+apply plugin: 'kotlinx-serialization'
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -41,4 +43,14 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //Kotlinx-Serialization
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.serialization}"
+
+    //KTOR
+    implementation "io.ktor:ktor-client-android:${versions.ktor}"
+    implementation "io.ktor:ktor-client-serialization:${versions.ktor}"
+    implementation "io.ktor:ktor-client-logging-jvm:${versions.ktor}"
+
+    implementation "org.jetbrains.kotlin:kotlin-reflect:${versions.reflect}"
 }

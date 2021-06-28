@@ -8,7 +8,14 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
     }
+
+    ext.versions = [
+            "ktor" : "1.6.0",
+            "serialization" : "1.2.1",
+            "reflect" : "1.5.20"
+    ]
 }
 
 allprojects {
