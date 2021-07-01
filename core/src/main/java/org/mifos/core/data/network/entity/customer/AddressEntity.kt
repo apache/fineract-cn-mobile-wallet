@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Address(
+data class AddressEntity(
     @SerialName("street")
     val street: String? = null,
     @SerialName("city")

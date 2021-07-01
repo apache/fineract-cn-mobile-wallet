@@ -4,9 +4,9 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class CustomerPage(
+data class CustomerPageEntity(
     @SerialName("customers")
-    val customers: List<Customer>? = null,
+    val customers: List<CustomerEntity>? = null,
     @SerialName("totalPages")
     val totalPages: Int? = null,
     @SerialName("totalElements")

@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Account(
+data class AccountEntity(
     @SerialName("accountNumber")
     val accountNumber: String? = null,
     @SerialName("amount")

@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Currency(
+data class CurrencyEntity(
     @SerialName("code")
     val code: String? = null,
     @SerialName("name")

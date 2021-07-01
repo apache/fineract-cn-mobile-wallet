@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class JournalEntry(
+data class JournalEntryEntity(
     @SerialName("transactionIdentifier")
     val transactionIdentifier: String? = null,
     @SerialName("transactionDate")
@@ -16,9 +16,9 @@ data class JournalEntry(
     @SerialName("note")
     val note: String? = null,
     @SerialName("debtors")
-    val debtors: Set<Account>? = null,
+    val debtors: List<AccountEntity>? = null,
     @SerialName("creditors")
-    val creditors: Set<Account>? = null,
+    val creditors: List<AccountEntity>? = null,
     @SerialName("state")
     val state: State? = null,
     @SerialName("message")

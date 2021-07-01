@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ContactDetail(
+data class ContactDetailEntity(
     @SerialName("type")
     val type: Type? = null,
     @SerialName("group")
@@ -14,7 +14,7 @@ data class ContactDetail(
     @SerialName("preferenceLevel")
     val preferenceLevel: Int? = null,
     @SerialName("validated")
-    val isValidated: Type? = null
+    val isValidated: Boolean? = null
 ) {
 
     enum class Type {
