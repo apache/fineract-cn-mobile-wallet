@@ -5,7 +5,7 @@ data class ContactDetail(
     val group: Group? = null,
     val value: String? = null,
     val preferenceLevel: Int? = null,
-    val isValidated: Type? = null
+    val isValidated: Boolean? = null
 ) {
 
     enum class Type {
