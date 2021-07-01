@@ -42,6 +42,9 @@ class EntityModelMapper<I : Any, O : Any>(
     }
 
     override fun invoke(data: I): O = with(outConstructor) {
-        callBy(parameters.associateWith { map(it, data) })
+        if (data is Enum<*>)
+            outType.java.enumConstants[data.ordinal]
+        else
+            callBy(parameters.associateWith { map(it, data) })
     }
 }
