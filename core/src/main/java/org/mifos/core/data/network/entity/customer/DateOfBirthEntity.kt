@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class DateOfBirth(
+data class DateOfBirthEntity(
     @SerialName("year")
     val year: Int? = null,
     @SerialName("month")

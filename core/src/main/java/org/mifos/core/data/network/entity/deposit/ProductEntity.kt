@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Product(
+data class ProductEntity(
     @SerialName("type")
     val type: String? = null,
     @SerialName("identifier")
@@ -14,7 +14,7 @@ data class Product(
     @SerialName("description")
     val description: String? = null,
     @SerialName("currency")
-    val currency: Currency? = null,
+    val currency: CurrencyEntity? = null,
     @SerialName("minimumBalance")
     val minimumBalance: Double? = null
 )

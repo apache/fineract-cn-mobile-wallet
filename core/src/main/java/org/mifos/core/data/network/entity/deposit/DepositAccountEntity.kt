@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class DepositAccount(
+data class DepositAccountEntity(
     @SerialName("customerIdentifier")
     val customerIdentifier: String? = null,
     @SerialName("productIdentifier")

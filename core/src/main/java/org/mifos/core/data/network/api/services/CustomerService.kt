@@ -4,8 +4,8 @@ import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import org.mifos.core.data.network.api.APIEndPoints.CONSUMER
-import org.mifos.core.data.network.entity.customer.Customer
-import org.mifos.core.data.network.entity.customer.CustomerPage
+import org.mifos.core.data.network.entity.customer.CustomerEntity
+import org.mifos.core.data.network.entity.customer.CustomerPageEntity
 import java.io.File
 
 class CustomerService(private val httpClient: HttpClient) {
@@ -13,18 +13,18 @@ class CustomerService(private val httpClient: HttpClient) {
     suspend fun fetchCustomers(
         pageIndex: Int?,
         size: Int?
-    ): CustomerPage {
-        return httpClient.get<CustomerPage>(path = "$CONSUMER/customers") {
+    ): CustomerPageEntity {
+        return httpClient.get<CustomerPageEntity>(path = "$CONSUMER/customers") {
             parameter("pageIndex", pageIndex)
             parameter("size", size)
         }
     }
 
-    suspend fun fetchCustomer(identifier: String): Customer {
-        return httpClient.get<Customer>(path = "$CONSUMER/customers/$identifier")
+    suspend fun fetchCustomer(identifier: String): CustomerEntity {
+        return httpClient.get<CustomerEntity>(path = "$CONSUMER/customers/$identifier")
     }
 
-    suspend fun createCustomer(customerPayload: Customer): HttpResponse {
+    suspend fun createCustomer(customerPayload: CustomerEntity): HttpResponse {
         return httpClient.post<HttpResponse>(path = "$CONSUMER/customers") {
             body = customerPayload
         }
@@ -32,7 +32,7 @@ class CustomerService(private val httpClient: HttpClient) {
 
     suspend fun updateCustomer(
         identifier: String,
-        customer: Customer
+        customer: CustomerEntity
     ): HttpResponse {
         return httpClient.put<HttpResponse>(path = "$CONSUMER/customers/$identifier") {
             body = customer
@@ -43,8 +43,8 @@ class CustomerService(private val httpClient: HttpClient) {
         pageIndex: Int?,
         size: Int?,
         term: String?
-    ): CustomerPage {
-        return httpClient.get<CustomerPage>(path = "$CONSUMER/customers") {
+    ): CustomerPageEntity {
+        return httpClient.get<CustomerPageEntity>(path = "$CONSUMER/customers") {
             parameter("pageIndex", pageIndex)
             parameter("size", size)
             parameter("term", term)

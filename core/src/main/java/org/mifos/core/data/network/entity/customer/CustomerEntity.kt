@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Customer(
+data class CustomerEntity(
     @SerialName("identifier")
     val customerIdentifier: String? = null,
     @SerialName("type")
@@ -16,7 +16,7 @@ data class Customer(
     @SerialName("surName")
     val LastName: String? = null,
     @SerialName("dateOfBirth")
-    val dateOfBirth: DateOfBirth? = null,
+    val dateOfBirth: DateOfBirthEntity? = null,
     @SerialName("member")
     val isMember: Boolean? = null,
     @SerialName("accountBeneficiary")
@@ -28,9 +28,9 @@ data class Customer(
     @SerialName("assignedEmployee")
     val assignedEmployee: String? = null,
     @SerialName("address")
-    val address: Address? = null,
+    val address: AddressEntity? = null,
     @SerialName("contactDetails")
-    val contactDetails: List<ContactDetail>? = null,
+    val contactDetails: List<ContactDetailEntity>? = null,
     @SerialName("currentState")
     val currentState: State? = null,
     @SerialName("createdBy")
