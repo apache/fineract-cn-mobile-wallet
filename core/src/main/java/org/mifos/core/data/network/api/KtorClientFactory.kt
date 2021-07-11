@@ -63,7 +63,6 @@ class KtorClientFactory(
                 }
 
                 headers {
-                    append(HttpHeaders.ContentType, ContentType.Application.Json)
                     append(HttpHeaders.Authorization, accessToken)
                     append(USER, user)
                     append(HEADER_X_TENANT_IDENTIFIER, tenant)

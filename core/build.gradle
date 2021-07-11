@@ -51,6 +51,13 @@ dependencies {
     implementation "io.ktor:ktor-client-android:${versions.ktor}"
     implementation "io.ktor:ktor-client-serialization:${versions.ktor}"
     implementation "io.ktor:ktor-client-logging-jvm:${versions.ktor}"
+    implementation "io.ktor:ktor-client-mock:${versions.ktor}"
 
+    //kotlin-reflect
     implementation "org.jetbrains.kotlin:kotlin-reflect:${versions.reflect}"
+
+    //coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutines}"
 }
