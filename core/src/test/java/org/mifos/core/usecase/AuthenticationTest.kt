@@ -1,12 +1,11 @@
 package org.mifos.core.usecase
 
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Test
-import org.mifos.core.MockData
 import org.mifos.core.MockFineractCNApiManager
 import org.mifos.core.data.network.api.FineractCNApiManager
+import org.mifos.core.data.network.api.MockData
 import org.mifos.core.data.repository.WalletRepositoryImpl
 import org.mifos.core.domain.repository.WalletRepository
 import org.mifos.core.domain.usecases.auth.AuthenticateUser
