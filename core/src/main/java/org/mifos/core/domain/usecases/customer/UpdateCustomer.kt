@@ -7,10 +7,10 @@ import org.mifos.core.utils.Result
 
 class UpdateCustomer(private val repository: WalletRepository) {
 
-    suspend fun execute(identifier: String, customer: Customer): Result<HttpResponse> {
+    suspend fun execute(identifier: String, customer: Customer): Result<String> {
         return try {
             val response = repository.updateCustomer(identifier, customer)
-            Result.success(response)
+            Result.success(response.status.description)
         } catch (e: Exception) {
             Result.error(e)
         }

@@ -15,6 +15,8 @@ data class Customer(
     val address: Address? = null,
     val contactDetails: List<ContactDetail>? = null,
     val currentState: State? = null,
+    val applicationDate: String? = null,
+    val customValues: List<String>? = null,
     val createdBy: String? = null,
     val createdOn: String? = null,
     val lastModifiedBy: String? = null,
