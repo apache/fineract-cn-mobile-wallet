@@ -33,6 +33,10 @@ data class CustomerEntity(
     val contactDetails: List<ContactDetailEntity>? = null,
     @SerialName("currentState")
     val currentState: State? = null,
+    @SerialName("applicationDate")
+    val applicationDate: String? = null,
+    @SerialName("customValues")
+    val customValues: List<String>? = null,
     @SerialName("createdBy")
     val createdBy: String? = null,
     @SerialName("CreatedOn")

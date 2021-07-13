@@ -3,6 +3,7 @@ package org.mifos.core.data.network.api.services
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
+import io.ktor.http.*
 import org.mifos.core.data.network.api.APIEndPoints.DEPOSIT
 import org.mifos.core.data.network.entity.deposit.DepositAccountEntity
 import org.mifos.core.data.network.entity.deposit.DepositAccountPayloadEntity
@@ -26,6 +27,9 @@ class DepositService(private val httpClient: HttpClient) {
 
     suspend fun createDepositAccount(depositAccountPayload: DepositAccountPayloadEntity): HttpResponse {
         return httpClient.post<HttpResponse>(path = "$DEPOSIT/instances") {
+            headers {
+                append(HttpHeaders.ContentType, ContentType.Application.Json)
+            }
             body = depositAccountPayload
         }
     }

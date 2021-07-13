@@ -3,6 +3,7 @@ package org.mifos.core.data.network.api.services
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
+import io.ktor.http.*
 import org.mifos.core.data.network.api.APIEndPoints.CONSUMER
 import org.mifos.core.data.network.entity.customer.CustomerEntity
 import org.mifos.core.data.network.entity.customer.CustomerPageEntity
@@ -26,6 +27,9 @@ class CustomerService(private val httpClient: HttpClient) {
 
     suspend fun createCustomer(customerPayload: CustomerEntity): HttpResponse {
         return httpClient.post<HttpResponse>(path = "$CONSUMER/customers") {
+            headers {
+                append(HttpHeaders.ContentType, ContentType.Application.Json)
+            }
             body = customerPayload
         }
     }
@@ -35,6 +39,9 @@ class CustomerService(private val httpClient: HttpClient) {
         customer: CustomerEntity
     ): HttpResponse {
         return httpClient.put<HttpResponse>(path = "$CONSUMER/customers/$identifier") {
+            headers {
+                append(HttpHeaders.ContentType, ContentType.Application.Json)
+            }
             body = customer
         }
     }
