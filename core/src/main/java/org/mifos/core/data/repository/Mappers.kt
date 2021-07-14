@@ -2,6 +2,7 @@ package org.mifos.core.data.repository
 
 import org.mifos.core.data.network.entity.LoginResponseEntity
 import org.mifos.core.data.network.entity.customer.*
+import org.mifos.core.data.network.entity.deposit.CurrencyEntity
 import org.mifos.core.data.network.entity.deposit.DepositAccountEntity
 import org.mifos.core.data.network.entity.deposit.DepositAccountPayloadEntity
 import org.mifos.core.data.network.entity.deposit.ProductEntity
@@ -108,7 +109,7 @@ object Mappers {
     val depositAccountPayloadEntityMapper by lazy {
         EntityModelMapper<DepositAccountPayload, DepositAccountPayloadEntity>()
     }
-    private val currencyMapper by lazy { EntityModelMapper<CustomerEntity, Currency>() }
+    private val currencyMapper by lazy { EntityModelMapper<CurrencyEntity, Currency>() }
     val productMapper by lazy {
         EntityModelMapper<ProductEntity, Product>().register(
             "currency",

@@ -13,7 +13,7 @@ data class CustomerEntity(
     val firstName: String? = null,
     @SerialName("middleName")
     val middleName: String? = null,
-    @SerialName("surName")
+    @SerialName("surname")
     val LastName: String? = null,
     @SerialName("dateOfBirth")
     val dateOfBirth: DateOfBirthEntity? = null,
@@ -39,7 +39,7 @@ data class CustomerEntity(
     val customValues: List<String>? = null,
     @SerialName("createdBy")
     val createdBy: String? = null,
-    @SerialName("CreatedOn")
+    @SerialName("createdOn")
     val createdOn: String? = null,
     @SerialName("lastModifiedBy")
     val lastModifiedBy: String? = null,
