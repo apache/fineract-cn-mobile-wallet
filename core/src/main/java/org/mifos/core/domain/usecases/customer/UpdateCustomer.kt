@@ -1,6 +1,5 @@
 package org.mifos.core.domain.usecases.customer
 
-import io.ktor.client.statement.*
 import org.mifos.core.domain.model.customer.Customer
 import org.mifos.core.domain.repository.WalletRepository
 import org.mifos.core.utils.Result
