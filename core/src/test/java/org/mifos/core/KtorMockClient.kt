@@ -25,11 +25,31 @@ class KtorMockClient(
         HttpClient(MockEngine) {
             engine {
                 addHandler { request ->
-                    when(request.url.toString()) {
-                        MockData.url1 -> {
-                            respond(MockData.loginData, headers = headersOf("Content-Type", ContentType.Application.Json.toString()))
+                    val content = when(request.url.toString()) {
+                        MockData.authUrl -> MockData.loginResponseData
+                        MockData.createCustomerUrl, MockData.createDepositAccountUrl -> {
+                            if (request.body.toString() == "TextContent[application/json] \"{}\"") {
+                                MockData.dataError
+                            } else {
+                                MockData.accepted
+                            }
                         }
-                        else -> error("Unhandled ${request.url.toString()}")
+                        MockData.fetchCustomerUrl -> MockData.customerData
+                        MockData.fetchCustomersUrl -> MockData.customerPageData
+                        MockData.updateCustomerUrl -> "Accepted"
+                        MockData.fetchDepositAccountsUrl -> "[ ${MockData.depositAccountListData} ]"
+                        MockData.fetchProductUrl -> MockData.productData
+                        MockData.fetchDepositAccountUrl -> MockData.depositAccountListData
+                        MockData.fetchJournalEntryUrl -> MockData.journalEntryData
+                        MockData.fetchJournalEntriesUrl -> "[ ${MockData.journalEntryData} ]"
+                        else -> "Unhandled ${request.url}"
+                    }
+                    if (content == MockData.accepted) {
+                        respond(content, status = HttpStatusCode.Accepted)
+                    } else if (content == MockData.dataError || content == "Unhandled ${request.url}") {
+                        error(content)
+                    } else {
+                        respond(content, headers = headersOf("Content-Type", ContentType.Application.Json.toString()))
                     }
                 }
             }
