@@ -9,7 +9,6 @@ import org.mifos.core.data.network.api.MockData
 import org.mifos.core.data.repository.WalletRepositoryImpl
 import org.mifos.core.domain.repository.WalletRepository
 import org.mifos.core.domain.usecases.deposit.FetchProductDetails
-
 import org.mifos.core.utils.Result
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -31,8 +30,8 @@ class FetchProductDetailsTest {
         val result = fetchProductDetails.execute(MockData.successIdentifier)
         println(
             "resultType = ${result.resultType}\n" +
-                    "data = ${result.data}\n" +
-                    "error = ${result.error}"
+                "data = ${result.data}\n" +
+                "error = ${result.error}"
         )
         assertEquals(Result.ResultType.SUCCESS, result.resultType)
         assertEquals(MockData.productModel, result.data)
@@ -43,8 +42,8 @@ class FetchProductDetailsTest {
         val result = fetchProductDetails.execute(MockData.errorIdentifier)
         println(
             "resultType = ${result.resultType}\n" +
-                    "data = ${result.data}\n" +
-                    "error = ${result.error}"
+                "data = ${result.data}\n" +
+                "error = ${result.error}"
         )
         assertEquals(Result.ResultType.ERROR, result.resultType)
         assertTrue(result.error != null)

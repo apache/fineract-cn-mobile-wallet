@@ -30,8 +30,8 @@ class AuthenticationTest {
         val result = authUseCase.execute("grantType", "userName", "password")
         println(
             "resultType = ${result.resultType}\n" +
-                    "data = ${result.data}\n" +
-                    "error = ${result.error}"
+                "data = ${result.data}\n" +
+                "error = ${result.error}"
         )
         assertEquals(Result.ResultType.SUCCESS, result.resultType)
         assertEquals(MockData.loginResponseModel, result.data)
@@ -42,8 +42,8 @@ class AuthenticationTest {
         val result = authUseCase.execute("grantType", "userName", "wrongPassword")
         println(
             "resultType = ${result.resultType}\n" +
-                    "data = ${result.data}\n" +
-                    "error = ${result.error}"
+                "data = ${result.data}\n" +
+                "error = ${result.error}"
         )
         assertEquals(Result.ResultType.ERROR, result.resultType)
         assertTrue(result.error != null)

@@ -31,8 +31,8 @@ class CreateDepositAccountTest {
         val result = createDepositAccount.execute(MockData.depositAccountPayloadModel)
         println(
             "resultType = ${result.resultType}\n" +
-                    "data = ${result.data}\n" +
-                    "error = ${result.error}"
+                "data = ${result.data}\n" +
+                "error = ${result.error}"
         )
         assertEquals(Result.ResultType.SUCCESS, result.resultType)
         assertEquals("Accepted", result.data)
@@ -43,8 +43,8 @@ class CreateDepositAccountTest {
         val result = createDepositAccount.execute(DepositAccountPayload())
         println(
             "resultType = ${result.resultType}\n" +
-                    "data = ${result.data}\n" +
-                    "error = ${result.error}"
+                "data = ${result.data}\n" +
+                "error = ${result.error}"
         )
         assertEquals(Result.ResultType.ERROR, result.resultType)
         assertTrue(result.error != null)

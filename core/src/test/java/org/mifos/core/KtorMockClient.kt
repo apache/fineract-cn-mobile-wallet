@@ -1,5 +1,6 @@
 package org.mifos.core
 
+/* ktlint-disable no-wildcard-imports */
 import io.ktor.client.*
 import io.ktor.client.engine.mock.*
 import io.ktor.client.features.*
@@ -9,6 +10,7 @@ import io.ktor.client.request.*
 import io.ktor.http.*
 import org.mifos.core.data.network.api.BaseURL
 import org.mifos.core.data.network.api.MockData
+/* ktlint-enable no-wildcard-imports */
 
 class KtorMockClient(
     private val accessToken: String,
@@ -25,7 +27,7 @@ class KtorMockClient(
         HttpClient(MockEngine) {
             engine {
                 addHandler { request ->
-                    val content = when(request.url.toString()) {
+                    val content = when (request.url.toString()) {
                         MockData.authUrl -> MockData.loginResponseData
                         MockData.createCustomerUrl, MockData.createDepositAccountUrl -> {
                             if (request.body.toString() == "TextContent[application/json] \"{}\"") {
@@ -58,7 +60,8 @@ class KtorMockClient(
                 serializer = KotlinxSerializer(
                     kotlinx.serialization.json.Json {
                         ignoreUnknownKeys = true
-                    })
+                    }
+                )
             }
 
             install(DefaultRequest) {

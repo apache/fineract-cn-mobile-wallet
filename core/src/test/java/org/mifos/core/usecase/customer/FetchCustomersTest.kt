@@ -30,8 +30,8 @@ class FetchCustomersTest {
         val result = fetchCustomers.execute(1, 2)
         println(
             "resultType = ${result.resultType}\n" +
-                    "data = ${result.data}\n" +
-                    "error = ${result.error}"
+                "data = ${result.data}\n" +
+                "error = ${result.error}"
         )
         assertEquals(Result.ResultType.SUCCESS, result.resultType)
         assertEquals(MockData.customerPageModel, result.data)
@@ -42,8 +42,8 @@ class FetchCustomersTest {
         val result = fetchCustomers.execute(5, 2)
         println(
             "resultType = ${result.resultType}\n" +
-                    "data = ${result.data}\n" +
-                    "error = ${result.error}"
+                "data = ${result.data}\n" +
+                "error = ${result.error}"
         )
         assertEquals(Result.ResultType.ERROR, result.resultType)
         assertTrue(result.error != null)

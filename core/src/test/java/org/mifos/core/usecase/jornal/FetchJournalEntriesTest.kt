@@ -30,8 +30,8 @@ class FetchJournalEntriesTest {
         val result = fetchJournalEntries.execute(MockData.testDateRange, MockData.successIdentifier)
         println(
             "resultType = ${result.resultType}\n" +
-                    "data = ${result.data}\n" +
-                    "error = ${result.error}"
+                "data = ${result.data}\n" +
+                "error = ${result.error}"
         )
         assertEquals(Result.ResultType.SUCCESS, result.resultType)
         assertEquals(listOf(MockData.journalEntryModel), result.data)
@@ -42,8 +42,8 @@ class FetchJournalEntriesTest {
         val result = fetchJournalEntries.execute(MockData.testDateRange, MockData.errorIdentifier)
         println(
             "resultType = ${result.resultType}\n" +
-                    "data = ${result.data}\n" +
-                    "error = ${result.error}"
+                "data = ${result.data}\n" +
+                "error = ${result.error}"
         )
         assertEquals(Result.ResultType.ERROR, result.resultType)
         assertTrue(result.error != null)
