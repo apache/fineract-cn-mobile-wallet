@@ -1,5 +1,6 @@
 package org.mifos.core.domain.repository
 
+/* ktlint-disable no-wildcard-imports */
 import io.ktor.client.statement.*
 import org.mifos.core.domain.model.LoginResponse
 import org.mifos.core.domain.model.customer.Customer
@@ -8,6 +9,7 @@ import org.mifos.core.domain.model.deposit.DepositAccount
 import org.mifos.core.domain.model.deposit.DepositAccountPayload
 import org.mifos.core.domain.model.deposit.Product
 import org.mifos.core.domain.model.journal.JournalEntry
+/* ktlint-enable no-wildcard-imports */
 
 interface WalletRepository {
 
