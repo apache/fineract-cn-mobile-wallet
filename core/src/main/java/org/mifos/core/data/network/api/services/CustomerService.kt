@@ -1,5 +1,6 @@
 package org.mifos.core.data.network.api.services
 
+/* ktlint-disable no-wildcard-imports */
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
@@ -8,6 +9,7 @@ import org.mifos.core.data.network.api.APIEndPoints.CONSUMER
 import org.mifos.core.data.network.entity.customer.CustomerEntity
 import org.mifos.core.data.network.entity.customer.CustomerPageEntity
 import java.io.File
+/* ktlint-enable no-wildcard-imports */
 
 class CustomerService(private val httpClient: HttpClient) {
 

@@ -1,11 +1,13 @@
 package org.mifos.core.data.network.api
 
+/* ktlint-disable no-wildcard-imports */
 import io.ktor.client.*
 import org.mifos.core.data.network.api.services.AccountingService
 import org.mifos.core.data.network.api.services.AuthenticationService
 import org.mifos.core.data.network.api.services.CustomerService
 import org.mifos.core.data.network.api.services.DepositService
 import org.mifos.core.utils.Constants
+/* ktlint-enable no-wildcard-imports */
 
 open class FineractCNApiManager {
 

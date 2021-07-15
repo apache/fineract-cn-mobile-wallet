@@ -1,5 +1,6 @@
 package org.mifos.core.data.repository
 
+/* ktlint-disable no-wildcard-imports */
 import io.ktor.client.statement.*
 import org.mifos.core.data.network.api.FineractCNApiManager
 import org.mifos.core.data.repository.Mappers.customerEntityMapper
@@ -13,14 +14,14 @@ import org.mifos.core.data.repository.Mappers.journalEntryMapper
 import org.mifos.core.data.repository.Mappers.loginResponseMapper
 import org.mifos.core.data.repository.Mappers.productMapper
 import org.mifos.core.domain.model.LoginResponse
+import org.mifos.core.domain.model.customer.Customer
+import org.mifos.core.domain.model.customer.CustomerPage
 import org.mifos.core.domain.model.deposit.DepositAccount
 import org.mifos.core.domain.model.deposit.DepositAccountPayload
 import org.mifos.core.domain.model.deposit.Product
 import org.mifos.core.domain.model.journal.JournalEntry
-import org.mifos.core.domain.model.customer.Customer
-import org.mifos.core.domain.model.customer.CustomerPage
 import org.mifos.core.domain.repository.WalletRepository
-
+/* ktlint-enable no-wildcard-imports */
 
 class WalletRepositoryImpl(private val fineractCNApiManager: FineractCNApiManager) :
     WalletRepository {
@@ -104,8 +105,10 @@ class WalletRepositoryImpl(private val fineractCNApiManager: FineractCNApiManage
         dateRange: String,
         accountIdentifier: String
     ): List<JournalEntry> {
-        return journalEntryListMapper(fineractCNApiManager.getAccountingApi()
-            .fetchJournalEntries(dateRange, accountIdentifier))
+        return journalEntryListMapper(
+            fineractCNApiManager.getAccountingApi()
+                .fetchJournalEntries(dateRange, accountIdentifier)
+        )
     }
 
     override suspend fun fetchJournalEntry(entryIdentifier: String): JournalEntry {

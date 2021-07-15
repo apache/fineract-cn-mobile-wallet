@@ -1,5 +1,6 @@
 package org.mifos.core.data.network.api
 
+/* ktlint-disable no-wildcard-imports */
 import android.util.Log
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
@@ -11,6 +12,7 @@ import io.ktor.client.features.observer.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 import org.mifos.core.data.network.api.BaseURL.baseURL
+/* ktlint-enable no-wildcard-imports */
 
 private const val TIME_OUT = 60_000
 
@@ -31,7 +33,8 @@ class KtorClientFactory(
                 serializer = KotlinxSerializer(
                     kotlinx.serialization.json.Json {
                         ignoreUnknownKeys = true
-                    })
+                    }
+                )
 
                 engine {
                     connectTimeout = TIME_OUT

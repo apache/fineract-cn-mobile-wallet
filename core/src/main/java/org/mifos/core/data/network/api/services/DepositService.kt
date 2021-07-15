@@ -1,5 +1,6 @@
 package org.mifos.core.data.network.api.services
 
+/* ktlint-disable no-wildcard-imports */
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
@@ -8,6 +9,7 @@ import org.mifos.core.data.network.api.APIEndPoints.DEPOSIT
 import org.mifos.core.data.network.entity.deposit.DepositAccountEntity
 import org.mifos.core.data.network.entity.deposit.DepositAccountPayloadEntity
 import org.mifos.core.data.network.entity.deposit.ProductEntity
+/* ktlint-enable no-wildcard-imports */
 
 class DepositService(private val httpClient: HttpClient) {
 
