@@ -2,13 +2,13 @@ package org.mifos.core.domain.repository
 
 /* ktlint-disable no-wildcard-imports */
 import io.ktor.client.statement.*
-import org.mifos.core.domain.model.LoginResponse
-import org.mifos.core.domain.model.customer.Customer
-import org.mifos.core.domain.model.customer.CustomerPage
-import org.mifos.core.domain.model.deposit.DepositAccount
-import org.mifos.core.domain.model.deposit.DepositAccountPayload
-import org.mifos.core.domain.model.deposit.Product
-import org.mifos.core.domain.model.journal.JournalEntry
+import org.mifos.core.data.network.entity.LoginResponseEntity
+import org.mifos.core.data.network.entity.customer.CustomerEntity
+import org.mifos.core.data.network.entity.customer.CustomerPageEntity
+import org.mifos.core.data.network.entity.deposit.DepositAccountEntity
+import org.mifos.core.data.network.entity.deposit.DepositAccountPayloadEntity
+import org.mifos.core.data.network.entity.deposit.ProductEntity
+import org.mifos.core.data.network.entity.journal.JournalEntryEntity
 /* ktlint-enable no-wildcard-imports */
 
 interface WalletRepository {
@@ -17,40 +17,40 @@ interface WalletRepository {
         grantType: String,
         userName: String,
         password: String
-    ): LoginResponse
+    ): LoginResponseEntity
 
-    suspend fun createCustomer(customerPayload: Customer): HttpResponse
+    suspend fun createCustomer(customerPayload: CustomerEntity): HttpResponse
 
-    suspend fun fetchCustomerDetails(identifier: String): Customer
+    suspend fun fetchCustomerDetails(identifier: String): CustomerEntity
 
     suspend fun fetchCustomers(
         pageIndex: Int?,
         size: Int?
-    ): CustomerPage
+    ): CustomerPageEntity
 
     suspend fun updateCustomer(
         identifier: String,
-        customer: Customer
+        customer: CustomerEntity
     ): HttpResponse
 
     suspend fun searchCustomer(
         pageIndex: Int?,
         size: Int?,
         term: String?
-    ): CustomerPage
+    ): CustomerPageEntity
 
-    suspend fun fetchCustomerDepositAccounts(customerIdentifier: String): List<DepositAccount>
+    suspend fun fetchCustomerDepositAccounts(customerIdentifier: String): List<DepositAccountEntity>
 
-    suspend fun fetchDepositAccountDetails(accountIdentifier: String): DepositAccount
+    suspend fun fetchDepositAccountDetails(accountIdentifier: String): DepositAccountEntity
 
-    suspend fun fetchProductDetails(productIdentifier: String): Product
+    suspend fun fetchProductDetails(productIdentifier: String): ProductEntity
 
-    suspend fun createDepositAccount(depositAccountPayload: DepositAccountPayload): HttpResponse
+    suspend fun createDepositAccount(depositAccountPayload: DepositAccountPayloadEntity): HttpResponse
 
     suspend fun fetchJournalEntries(
         dateRange: String,
         accountIdentifier: String
-    ): List<JournalEntry>
+    ): List<JournalEntryEntity>
 
-    suspend fun fetchJournalEntry(entryIdentifier: String): JournalEntry
+    suspend fun fetchJournalEntry(entryIdentifier: String): JournalEntryEntity
 }
