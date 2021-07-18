@@ -1,5 +1,6 @@
 package org.mifos.core.domain.mappers
 
+/* ktlint-disable no-wildcard-imports */
 import org.mifos.core.data.network.entity.LoginResponseEntity
 import org.mifos.core.data.network.entity.customer.*
 import org.mifos.core.data.network.entity.deposit.CurrencyEntity
@@ -17,6 +18,7 @@ import org.mifos.core.domain.model.deposit.Product
 import org.mifos.core.domain.model.journal.Account
 import org.mifos.core.domain.model.journal.JournalEntry
 import org.mifos.core.utils.EntityModelMapper
+/* ktlint-enable no-wildcard-imports */
 
 object Mappers {
 
