@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:theme="@style/AppTheme.Toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:text="@string/log_in"/>
+
+    <LinearLayout android:id="@+id/user_greet_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/value_10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/value_10dp"
+            android:gravity="end">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/welcome"
+                android:textSize="@dimen/value_16dp"/>
+
+            <TextView android:id="@+id/user_first_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="UserFirstName"
+                android:textStyle="bold"
+                android:textSize="@dimen/value_15dp"/>
+
+        </LinearLayout>
+
+        <ImageView android:id="@+id/user_profile"
+            android:layout_width="@dimen/value_24dp"
+            android:layout_height="@dimen/value_24dp"
+            app:srcCompat="@drawable/ic_account_circle"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>
