@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">mobile-wallet-cn</string>
+
+    <!-- App string resources -->
+    <string name="log_in">Log In</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="welcome">Welcome</string>
+    <string name="balance">Balance</string>
+</resources>
