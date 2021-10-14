@@ -3,7 +3,7 @@ package org.mifos.core.data.repository
 /* ktlint-disable no-wildcard-imports */
 import io.ktor.client.statement.*
 import org.mifos.core.data.network.api.FineractCNApiManager
-import org.mifos.core.data.network.entity.LoginResponseEntity
+import org.mifos.core.data.network.entity.auth.LoginResponseEntity
 import org.mifos.core.data.network.entity.customer.CustomerEntity
 import org.mifos.core.data.network.entity.customer.CustomerPageEntity
 import org.mifos.core.data.network.entity.deposit.DepositAccountEntity
@@ -18,12 +18,11 @@ class WalletRepositoryImpl(private val fineractCNApiManager: FineractCNApiManage
 
     // Repository methods for data transfer starts
     override suspend fun loginUser(
-        grantType: String,
         userName: String,
         password: String
     ): LoginResponseEntity {
         return fineractCNApiManager.getAuthenticationAPI()
-            .authenticate(grantType, userName, password)
+            .authenticate(userName, password)
     }
 
     override suspend fun createCustomer(customerPayload: CustomerEntity): HttpResponse {
