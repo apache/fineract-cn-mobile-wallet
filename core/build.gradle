@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
 }
 
+apply plugin: 'kotlinx-serialization'
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -30,6 +32,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    packagingOptions {
+        exclude "**/attach_hotspot_windows.dll"
+        exclude "META-INF/licenses/**"
+        exclude "META-INF/AL2.0"
+        exclude "META-INF/LGPL2.1"
+    }
 }
 
 dependencies {
@@ -41,4 +50,21 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //Kotlinx-Serialization
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.serialization}"
+
+    //KTOR
+    implementation "io.ktor:ktor-client-android:${versions.ktor}"
+    implementation "io.ktor:ktor-client-serialization:${versions.ktor}"
+    implementation "io.ktor:ktor-client-logging-jvm:${versions.ktor}"
+    implementation "io.ktor:ktor-client-mock:${versions.ktor}"
+
+    //kotlin-reflect
+    implementation "org.jetbrains.kotlin:kotlin-reflect:${versions.reflect}"
+
+    //coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutines}"
 }
