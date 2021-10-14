@@ -1,7 +1,7 @@
 package org.mifos.core.domain.mappers
 
 /* ktlint-disable no-wildcard-imports */
-import org.mifos.core.data.network.entity.LoginResponseEntity
+import org.mifos.core.data.network.entity.auth.LoginResponseEntity
 import org.mifos.core.data.network.entity.customer.*
 import org.mifos.core.data.network.entity.deposit.CurrencyEntity
 import org.mifos.core.data.network.entity.deposit.DepositAccountEntity

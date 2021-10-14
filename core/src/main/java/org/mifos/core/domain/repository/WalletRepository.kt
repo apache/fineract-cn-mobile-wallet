@@ -2,7 +2,7 @@ package org.mifos.core.domain.repository
 
 /* ktlint-disable no-wildcard-imports */
 import io.ktor.client.statement.*
-import org.mifos.core.data.network.entity.LoginResponseEntity
+import org.mifos.core.data.network.entity.auth.LoginResponseEntity
 import org.mifos.core.data.network.entity.customer.CustomerEntity
 import org.mifos.core.data.network.entity.customer.CustomerPageEntity
 import org.mifos.core.data.network.entity.deposit.DepositAccountEntity
@@ -14,7 +14,6 @@ import org.mifos.core.data.network.entity.journal.JournalEntryEntity
 interface WalletRepository {
 
     suspend fun loginUser(
-        grantType: String,
         userName: String,
         password: String
     ): LoginResponseEntity
